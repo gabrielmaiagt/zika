@@ -15,6 +15,10 @@ export default {
         code: ['monospace'],
       },
       colors: {
+        'brand-red': '#E50914',
+        'brand-yellow': '#FFB200',
+        'brand-yellow-border': '#FFD84D',
+        'brand-gray': '#C8CDD2',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -88,11 +92,24 @@ export default {
             height: '0',
           },
         },
+        shimmer: {
+          '0%': {
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            transform: 'translateX(100%)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        shimmer: 'shimmer 2s infinite',
       },
+      boxShadow: {
+        'inner-dark': 'inset 0 4px 10px 0 rgb(0 0 0 / 0.5)',
+        'glow-yellow': '0 0 25px 0px hsl(var(--accent) / 0.4)',
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],

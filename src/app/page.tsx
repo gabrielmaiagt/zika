@@ -1,3 +1,15 @@
+import { PageClient } from '@/components/landing/page-client';
+
 export default function Home() {
-  return <></>;
+  const config = {
+    preco: "9,90",
+    dePreco: "49,90",
+    vagas: 47,
+    checkoutUrl: "#checkout", // Anchor link for in-page navigation
+    finalCheckoutUrl: "https://seu-checkout-aqui" // Real checkout link
+  };
+
+  return (
+    <PageClient config={config} />
+  );
 }
