@@ -45,7 +45,6 @@ export function PageClient({ config }: { config: Config }) {
     return (
         <>
             <AlertBar vagas={config.vagas} />
-            <StickyHeader show={showStickyHeader} />
             <div id="topo" />
             <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 py-12">
                 <div ref={heroRef}>
@@ -59,8 +58,8 @@ export function PageClient({ config }: { config: Config }) {
                 <StatsBar />
                 <Features />
                 <SocialProof />
-                <Bonus />
                 <div className="space-y-8 pt-12">
+                    <Bonus />
                     <CtaBlock
                         vagas={config.vagas}
                         preco={config.preco}
