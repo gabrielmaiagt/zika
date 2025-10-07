@@ -10,7 +10,6 @@ import { Footer } from '@/components/landing/footer';
 import { Hero } from '@/components/landing/hero';
 import { SocialProof } from '@/components/landing/social-proof';
 import { StatsBar } from '@/components/landing/stats-bar';
-import { StickyCta } from '@/components/landing/sticky-cta';
 import { StickyHeader } from '@/components/landing/sticky-header';
 
 type Config = {
@@ -68,7 +67,6 @@ export function PageClient({ config }: { config: Config }) {
                 <Faq />
             </div>
             <Footer checkoutUrl={config.checkoutUrl} />
-            <StickyCta checkoutUrl={config.checkoutUrl} />
         </>
     );
 }
