@@ -59,12 +59,14 @@ export function PageClient({ config }: { config: Config }) {
                 <Features />
                 <Bonus />
                 <SocialProof />
-                <CtaBlock
-                    vagas={config.vagas}
-                    preco={config.preco}
-                    checkoutUrl={config.finalCheckoutUrl}
-                />
-                <Guarantee />
+                <div>
+                    <CtaBlock
+                        vagas={config.vagas}
+                        preco={config.preco}
+                        checkoutUrl={config.finalCheckoutUrl}
+                    />
+                    <Guarantee />
+                </div>
                 <Faq />
             </div>
         </>

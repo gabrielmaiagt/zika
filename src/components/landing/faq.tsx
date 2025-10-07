@@ -26,7 +26,7 @@ const faqItems = [
 
 export function Faq() {
     return (
-        <section id="faq" className="w-full max-w-3xl mx-auto flex flex-col items-center space-y-12">
+        <section id="faq" className="w-full max-w-3xl mx-auto flex flex-col items-center space-y-12 -mt-16 md:-mt-20">
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-center uppercase">
                 Dúvidas Frequentes
             </h2>
