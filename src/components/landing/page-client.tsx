@@ -60,7 +60,7 @@ export function PageClient({ config }: { config: Config }) {
                 <Features />
                 <Bonus />
                 <SocialProof />
-                <div>
+                <div className="space-y-8">
                     <CtaBlock
                         vagas={config.vagas}
                         preco={config.preco}
