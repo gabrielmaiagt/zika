@@ -6,7 +6,6 @@ import { Bonus } from '@/components/landing/bonus';
 import { CtaBlock } from '@/components/landing/cta-block';
 import { Faq } from '@/components/landing/faq';
 import { Features } from '@/components/landing/features';
-import { Footer } from '@/components/landing/footer';
 import { Hero } from '@/components/landing/hero';
 import { SocialProof } from '@/components/landing/social-proof';
 import { StatsBar } from '@/components/landing/stats-bar';
@@ -68,7 +67,6 @@ export function PageClient({ config }: { config: Config }) {
                 <Guarantee />
                 <Faq />
             </div>
-            <Footer checkoutUrl={config.checkoutUrl} />
         </>
     );
 }
