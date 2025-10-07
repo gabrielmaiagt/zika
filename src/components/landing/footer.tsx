@@ -13,10 +13,6 @@ export function Footer({ checkoutUrl }: { checkoutUrl: string }) {
                     <p>Este conteúdo é independente, não afiliado ao CapCut, Meta ou TikTok. Todos os direitos reservados © 2025.</p>
                     <p>O uso dos materiais é destinado para fins pessoais e intransferíveis.</p>
                 </div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-foreground text-background px-3 py-1 text-xs font-bold">
-                    <span>Made in</span>
-                    <span className="font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-yellow">Bolt</span>
-                </div>
             </div>
         </footer>
     );
