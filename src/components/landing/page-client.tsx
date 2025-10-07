@@ -47,12 +47,13 @@ export function PageClient({ config }: { config: Config }) {
             <AlertBar vagas={config.vagas} />
             <StickyHeader show={showStickyHeader} />
             <div id="topo" />
-            <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 py-24 md:py-32">
+            <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 md:space-y-32 py-12">
                 <div ref={heroRef}>
                     <Hero
                         dePreco={config.dePreco}
                         preco={config.preco}
                         checkoutUrl={config.checkoutUrl}
+                        vagas={config.vagas}
                     />
                 </div>
                 <StatsBar />

@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 
-const TEN_MINUTES_IN_MS = 10 * 60 * 1000;
+const COUNTDOWN_MINUTES = 10;
+const TEN_MINUTES_IN_MS = COUNTDOWN_MINUTES * 60 * 1000;
 
 export function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState(TEN_MINUTES_IN_MS);
@@ -15,55 +16,42 @@ export function CountdownTimer() {
   useEffect(() => {
     if (!isClient) return;
 
-    let timerStartTimeStr = localStorage.getItem('packTimerStart');
-    let timerStartTime: number;
-
-    if (timerStartTimeStr) {
-      timerStartTime = parseInt(timerStartTimeStr, 10);
-      const elapsed = Date.now() - timerStartTime;
-      if (elapsed >= TEN_MINUTES_IN_MS) {
-        // Timer expired in a previous session, restart it
-        timerStartTime = Date.now();
-        localStorage.setItem('packTimerStart', timerStartTime.toString());
-      }
-    } else {
-      timerStartTime = Date.now();
-      localStorage.setItem('packTimerStart', timerStartTime.toString());
+    const key = 'packTimerStart';
+    const startTime = Number(localStorage.getItem(key)) || Date.now();
+    if (!localStorage.getItem(key)) {
+      localStorage.setItem(key, String(startTime));
     }
-    
-    const calculateInitialTimeLeft = () => {
-        const elapsed = Date.now() - timerStartTime;
-        return Math.max(0, TEN_MINUTES_IN_MS - elapsed);
+
+    const endTime = startTime + TEN_MINUTES_IN_MS;
+
+    const tick = () => {
+      const now = Date.now();
+      const remaining = Math.max(0, endTime - now);
+      
+      if (remaining > 0) {
+        setTimeLeft(remaining);
+        requestAnimationFrame(tick);
+      } else {
+        setTimeLeft(0);
+        // Reset timer for next visit if it expires
+        localStorage.removeItem(key);
+      }
     };
 
-    setTimeLeft(calculateInitialTimeLeft());
+    tick();
 
-    const interval = setInterval(() => {
-        const newTimeLeft = calculateInitialTimeLeft();
-        setTimeLeft(newTimeLeft);
-
-        if (newTimeLeft <= 0) {
-            clearInterval(interval);
-            // Optionally, remove the key to restart on next visit
-            // localStorage.removeItem('packTimerStart'); 
-        }
-    }, 1000);
-
-    return () => clearInterval(interval);
   }, [isClient]);
 
   const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
   const seconds = Math.floor((timeLeft / 1000) % 60);
-
-  if (!isClient) {
-    return (
-        <span className="font-mono text-lg md:text-xl tracking-wider">10:00</span>
-    );
-  }
+  
+  const displayTime = isClient 
+    ? `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+    : `${String(COUNTDOWN_MINUTES).padStart(2, '0')}:00`;
 
   return (
-    <span className="font-mono text-lg md:text-xl tracking-wider">
-      {minutes.toString().padStart(2, '0')}:{seconds.toString().padStart(2, '0')}
+    <span className="font-mono tabular-nums">
+      {displayTime}
     </span>
   );
 }
