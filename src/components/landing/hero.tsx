@@ -53,15 +53,9 @@ export function Hero({ dePreco, preco, checkoutUrl, vagas }: HeroProps) {
           </p>
         </div>
 
-        {/* Micro-urgência */}
-        <div className="mx-auto mt-5 flex max-w-xl items-center justify-center gap-2 text-center text-sm font-semibold text-red-300">
-          <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-red-400/60">⚡</span>
-          Restam <span id="vagas" className="mx-1 text-yellow-300 font-extrabold">{vagas}</span> vagas hoje
-        </div>
-
         {/* CTA */}
         <a href={checkoutUrl}
-           className="group mx-auto mt-5 flex w-full max-w-xl items-center justify-center gap-2 rounded-full border border-yellow-300/50 bg-gradient-to-r from-red-600 to-yellow-400 px-6 py-4 text-lg font-extrabold text-black shadow-lg transition hover:scale-[1.02] active:scale-95">
+           className="group mx-auto mt-8 flex w-full max-w-xl items-center justify-center gap-2 rounded-full border border-yellow-300/50 bg-gradient-to-r from-red-600 to-yellow-400 px-6 py-4 text-lg font-extrabold text-black shadow-lg transition hover:scale-[1.02] active:scale-95">
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           QUERO VIRALIZAR MEUS GRAU
         </a>
