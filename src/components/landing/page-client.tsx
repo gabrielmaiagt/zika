@@ -11,6 +11,7 @@ import { Hero } from '@/components/landing/hero';
 import { SocialProof } from '@/components/landing/social-proof';
 import { StatsBar } from '@/components/landing/stats-bar';
 import { StickyHeader } from '@/components/landing/sticky-header';
+import { Guarantee } from './guarantee';
 
 type Config = {
   preco: string;
@@ -64,6 +65,7 @@ export function PageClient({ config }: { config: Config }) {
                     preco={config.preco}
                     checkoutUrl={config.finalCheckoutUrl}
                 />
+                <Guarantee />
                 <Faq />
             </div>
             <Footer checkoutUrl={config.checkoutUrl} />
