@@ -19,7 +19,7 @@ export function Hero({ dePreco, preco, checkoutUrl, vagas }: HeroProps) {
       <div className="relative mx-auto max-w-3xl px-4 pt-10 pb-12 sm:pt-14 sm:pb-16">
         {/* Badge */}
         <div className="flex justify-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/60 bg-red-500/10 px-4 py-1.5 text-sm font-semibold text-red-300 shadow-[0_0_20px_rgba(229,9,20,.25)]">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/60 bg-red-500/10 px-3 py-1.5 text-xs sm:text-sm font-semibold text-red-300 shadow-[0_0_20px_rgba(229,9,20,.25)]">
             <LightningIcon className="h-4 w-4 animate-pulse" />
             LANÇAMENTO EXCLUSIVO
           </div>
@@ -37,15 +37,15 @@ export function Hero({ dePreco, preco, checkoutUrl, vagas }: HeroProps) {
         </p>
 
         {/* Price Card */}
-        <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-yellow-400/80 bg-[#2a0f0f]/80 p-6 shadow-[0_0_40px_rgba(255,210,64,.25)] ring-1 ring-yellow-300/20">
+        <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-yellow-400/80 bg-[#2a0f0f]/80 p-4 sm:p-6 shadow-[0_0_40px_rgba(255,210,64,.25)] ring-1 ring-yellow-300/20">
           <p className="text-center text-sm font-bold tracking-wide text-white/70">
             DE <span className="line-through opacity-80">R${dePreco}</span> POR APENAS
           </p>
 
           <div className="mt-2 flex items-end justify-center">
-            <span className="mr-1 translate-y-1 text-2xl font-extrabold text-white/90">R$</span>
-            <span className="text-[56px] sm:text-[72px] leading-none font-black bg-gradient-to-r from-red-500 to-yellow-300 bg-clip-text text-transparent">{priceInteger}</span>
-            <span className="ml-1 -translate-y-2 text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-red-400 to-yellow-300 bg-clip-text text-transparent">,{priceFraction}</span>
+            <span className="mr-1 translate-y-1 text-xl sm:text-2xl font-extrabold text-white/90">R$</span>
+            <span className="text-6xl sm:text-[72px] leading-none font-black bg-gradient-to-r from-red-500 to-yellow-300 bg-clip-text text-transparent">{priceInteger}</span>
+            <span className="ml-1 -translate-y-2 text-2xl sm:text-4xl font-extrabold bg-gradient-to-r from-red-400 to-yellow-300 bg-clip-text text-transparent">,{priceFraction}</span>
           </div>
 
           <p className="mt-3 text-center text-sm font-extrabold uppercase tracking-wide text-yellow-300">
@@ -55,7 +55,7 @@ export function Hero({ dePreco, preco, checkoutUrl, vagas }: HeroProps) {
 
         {/* CTA */}
         <a href={checkoutUrl}
-           className="group mx-auto mt-8 flex w-full max-w-xl items-center justify-center gap-2 rounded-full border border-yellow-300/50 bg-gradient-to-r from-red-600 to-yellow-400 px-6 py-4 text-lg font-extrabold text-black shadow-lg transition hover:scale-[1.02] active:scale-95">
+           className="group mx-auto mt-8 flex w-full max-w-xl items-center justify-center gap-2 rounded-full border border-yellow-300/50 bg-gradient-to-r from-red-600 to-yellow-400 px-6 py-4 text-base sm:text-lg font-extrabold text-black shadow-lg transition hover:scale-[1.02] active:scale-95">
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           QUERO VIRALIZAR MEUS GRAU
         </a>

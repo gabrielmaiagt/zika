@@ -16,7 +16,7 @@ function TestimonialCard({ handle, text, views, avatarId }: typeof testimonials[
     <Card className="bg-card border border-white/10 shadow-inner-dark w-full">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 p-4">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-red to-brand-yellow p-0.5">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-brand-red to-brand-yellow p-0.5">
              <Image 
                 src={avatar?.imageUrl || `https://picsum.photos/seed/${avatarId}/48/48`} 
                 alt={`Avatar de ${handle}`} 
@@ -26,12 +26,12 @@ function TestimonialCard({ handle, text, views, avatarId }: typeof testimonials[
                 className="rounded-full bg-background"
               />
           </div>
-          <p className="font-bold text-foreground">{handle}</p>
+          <p className="font-bold text-sm sm:text-base text-foreground">{handle}</p>
         </div>
-        <p className="text-sm text-muted-foreground">{views} visualizações</p>
+        <p className="text-xs sm:text-sm text-muted-foreground">{views}</p>
       </CardHeader>
       <CardContent className="p-4 pt-0">
-        <blockquote className="text-foreground italic">“{text}”</blockquote>
+        <blockquote className="text-sm sm:text-base text-foreground italic">“{text}”</blockquote>
         <div className="flex items-center gap-1 mt-3 text-brand-yellow">
           {[...Array(5)].map((_, i) => <FireIcon key={i} className="w-4 h-4 stroke-current" fill="none" />)}
         </div>
@@ -43,10 +43,10 @@ function TestimonialCard({ handle, text, views, avatarId }: typeof testimonials[
 export function SocialProof() {
   return (
     <section className="w-full flex flex-col items-center space-y-12">
-      <h2 className="text-3xl md:text-5xl font-black tracking-tighter text-center uppercase bg-gradient-to-r from-brand-red to-brand-yellow bg-clip-text text-transparent">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tighter text-center uppercase bg-gradient-to-r from-brand-red to-brand-yellow bg-clip-text text-transparent">
         Quem Usou, Já Viralizou
       </h2>
-      <div className="w-full columns-1 md:columns-2 gap-6 space-y-6">
+      <div className="w-full columns-1 md:columns-2 gap-4 sm:gap-6 space-y-4 sm:space-y-6">
         {testimonials.map((testimonial, index) => (
           <div key={index} className="break-inside-avoid">
             <TestimonialCard {...testimonial} />
