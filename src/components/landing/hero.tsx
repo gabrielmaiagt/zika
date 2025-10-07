@@ -1,5 +1,5 @@
 import { CountdownTimer } from './countdown-timer';
-import { FireIcon, ClockIcon, ShieldCheckIcon } from './icons';
+import { FireIcon, ClockIcon, ShieldCheckIcon, LightningIcon } from './icons';
 
 type HeroProps = {
   dePreco: string;
@@ -18,9 +18,11 @@ export function Hero({ dePreco, preco, checkoutUrl, vagas }: HeroProps) {
 
       <div className="relative mx-auto max-w-3xl px-4 pt-10 pb-12 sm:pt-14 sm:pb-16">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-red-500/60 bg-red-500/10 px-4 py-1.5 text-sm font-semibold text-red-300 shadow-[0_0_20px_rgba(229,9,20,.25)]">
-          <svg className="h-4 w-4 animate-pulse" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h7l-1 8 11-12h-7l1-8z"/></svg>
-          LANÇAMENTO EXCLUSIVO
+        <div className="flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/60 bg-red-500/10 px-4 py-1.5 text-sm font-semibold text-red-300 shadow-[0_0_20px_rgba(229,9,20,.25)]">
+            <LightningIcon className="h-4 w-4 animate-pulse" />
+            LANÇAMENTO EXCLUSIVO
+          </div>
         </div>
 
         {/* Headline */}
