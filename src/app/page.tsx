@@ -6,7 +6,7 @@ export default function Home() {
     dePreco: "49,90",
     vagas: 47,
     checkoutUrl: "#checkout", // Anchor link for in-page navigation
-    finalCheckoutUrl: "https://seu-checkout-aqui" // Real checkout link
+    finalCheckoutUrl: "https://seguropagamentos.com.br/grau" // Real checkout link
   };
 
   return (
