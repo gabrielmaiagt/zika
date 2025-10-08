@@ -3,11 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const bonusList = [
     {
       title: "LISTA DE PÁGINAS DE GRAU",
-      description: "Páginas que aceitam repost e vão te dar visibilidade instantânea."
+      description: "Páginas que aceitam repost e vão te dar visibilidade instantânea.",
+      price: "29,90"
     },
     {
       title: "HASHTAGS E FRASES PRONTAS",
-      description: "Copy pronto pra usar nas descrições e bombar o algoritmo."
+      description: "Copy pronto pra usar nas descrições e bombar o algoritmo.",
+      price: "19,90"
     }
 ];
 
@@ -21,12 +23,16 @@ export function Bonus() {
                 </h2>
                 <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {bonusList.map((bonus, index) => (
-                        <Card key={index} className="bg-card/80 backdrop-blur-sm border-2 border-brand-yellow-border/50 shadow-lg">
+                        <Card key={index} className="bg-card/80 backdrop-blur-sm border-2 border-brand-yellow-border/50 shadow-lg flex flex-col">
                              <CardHeader>
                                 <CardTitle className="text-lg sm:text-xl font-bold text-brand-yellow">{bonus.title}</CardTitle>
                              </CardHeader>
-                            <CardContent>
+                            <CardContent className="flex-grow flex flex-col justify-between">
                                 <p className="text-muted-foreground text-sm sm:text-base">{bonus.description}</p>
+                                <div className="mt-4 text-right">
+                                    <span className="text-base text-muted-foreground line-through">R${bonus.price}</span>
+                                    <p className="text-xl font-bold text-brand-yellow">HOJE: GRÁTIS</p>
+                                </div>
                             </CardContent>
                         </Card>
                     ))}
